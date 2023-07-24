@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:iti_flutter_project/sign_up.dart';
 import 'package:iti_flutter_project/widgets/buttons.dart';
-import 'package:iti_flutter_project/widgets/text_field.dart';
+import 'package:iti_flutter_project/widgets/text_field_email.dart';
+import 'package:iti_flutter_project/widgets/text_field_pass.dart';
 
 class LogIn extends StatefulWidget {
   const LogIn({super.key});
@@ -14,8 +15,6 @@ class _LogInState extends State<LogIn> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController emailcontroller =TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-
-
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -31,30 +30,47 @@ class _LogInState extends State<LogIn> {
                 child:
                 Column(
                  children: [
-                   Padding(padding: const EdgeInsets.symmetric(vertical: 50.0),
+                   Padding(
+                     padding: const EdgeInsets.symmetric(vertical: 50.0),
                      child:
-                     Text("Log in page ",style: TextStyle(fontSize: 50,fontWeight: FontWeight.bold),),
+                     Text("Log in page ",style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold),),
                    ),
 
                    Padding(
                      padding: const EdgeInsets.symmetric(),
-                     child: Text_field(text: "  Email",),//valid: '@gmail.com', message: 'not valid email'
+                     child: Text_field(text: "  Email", valid: '@gmail.com', message: 'In valid email!',),
                    ),
 
                    Padding(
                      padding: const EdgeInsets.symmetric(vertical: 20.0),
-                     child: Text_field(text:"  Password",), //valid: 7, message: 'should contain 8 numbers',
+                     child: TextFieldpass(text:"  Password", ),
                    ),
 
-
                    InkWell(
-                     onTap: (){
-                       _formKey.currentState!.validate();
-                       /*Navigator.push(context,
-                         MaterialPageRoute(builder: (context) =>
-                             Sign_up()),);*/
+                     onTap: (){ if
+                       (_formKey.currentState!.validate()){
+                      /* Navigator.push(context,
+                       MaterialPageRoute(builder: (context) =>
+                           Sign_up()),)*/;}
+
                      },
-                     child: Buttons(button_text: "log in",),
+                     child: Buttons(button_text: "Log in",),
+                   ),
+                   Padding(
+                     padding: const EdgeInsets.all(8.0),
+                     child: Column(
+                       children: [
+                         Text("don't have acount?"),
+                         InkWell(
+                           onTap: (){
+                             Navigator.push(context,
+                               MaterialPageRoute(builder: (context) =>
+                                   Sign_up()),);
+                           },
+                           child: Text("sign up",style: TextStyle(color: Colors.red),),
+                         ),
+                       ],
+                     ),
                    )
 
 

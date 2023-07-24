@@ -12,20 +12,13 @@ class _ButtonsState extends State<Buttons> {
   @override
   Widget build(BuildContext context) {
     return  Container(
-      height: 80, width: 200,
-      decoration: BoxDecoration(color: Colors.transparent,
-        borderRadius: BorderRadius.circular(15),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.lightBlueAccent,
-            //spreadRadius: 5,
-            blurRadius: 50,
-            //offset: Offset(0, 3),
-          ),
-        ],
+      height: 50, width: 120,
+      decoration: BoxDecoration(color: Colors.lightBlueAccent,
+        borderRadius: BorderRadius.circular(25),border: Border.all(color: Colors.indigo),
+
       ),
 
-      child: Center(child: Text(widget.button_text,style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),),
+      child: Center(child: Text(widget.button_text,style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),),
     );
   }
 }
