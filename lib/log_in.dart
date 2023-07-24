@@ -60,14 +60,14 @@ class _LogInState extends State<LogIn> {
                      padding: const EdgeInsets.all(8.0),
                      child: Column(
                        children: [
-                         Text("don't have acount?"),
+                         Text("Don't have acount?"),
                          InkWell(
                            onTap: (){
                              Navigator.push(context,
                                MaterialPageRoute(builder: (context) =>
                                    Sign_up()),);
                            },
-                           child: Text("sign up",style: TextStyle(color: Colors.red),),
+                           child: Text("sign up",style: TextStyle(color: Colors.blueAccent),),
                          ),
                        ],
                      ),
