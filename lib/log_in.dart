@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iti_flutter_project/homelayout.dart';
 import 'package:iti_flutter_project/sign_up.dart';
 import 'package:iti_flutter_project/widgets/buttons.dart';
 import 'package:iti_flutter_project/widgets/text_field_email.dart';
@@ -21,7 +22,7 @@ class _LogInState extends State<LogIn> {
       body: Container(
         width: MediaQuery.of(context).size.width,
 
-        decoration: BoxDecoration(
+        decoration:  BoxDecoration(
         image: DecorationImage(
           image: AssetImage('assets/background4.jpg'),
           fit: BoxFit.fill,),
@@ -35,43 +36,43 @@ class _LogInState extends State<LogIn> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                  children: [
-                   Padding(
-                     padding: const EdgeInsets.fromLTRB(40, 8.0, 40, 8.0),
+                   const Padding(
+                     padding: EdgeInsets.fromLTRB(40, 8.0, 40, 8.0),
                      child: Text("Log in page ",style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold),),
                    ),
 
-                   Padding(
-                     padding: const EdgeInsets.fromLTRB(40, 8.0, 40, 8.0),
+                   const Padding(
+                     padding: EdgeInsets.fromLTRB(40, 8.0, 40, 8.0),
                      child: Text_field(text: "  Email", valid: '@gmail.com', message: 'In valid email!',),
                    ),
 
-                   Padding(
-                     padding: const EdgeInsets.fromLTRB(40, 8.0, 40, 8.0),
+                   const Padding(
+                     padding: EdgeInsets.fromLTRB(40, 8.0, 40, 8.0),
                      child: TextFieldpass(text:"  Password", ),
                    ),
 
                    InkWell(
                      onTap: (){ if
                        (_formKey.currentState!.validate()){
-                      /* Navigator.push(context,
+                       Navigator.push(context,
                        MaterialPageRoute(builder: (context) =>
-                           Sign_up()),)*/;}
-
+                            homelayout()),);
+                     }
                      },
-                     child: Buttons(button_text: "Log in",),
+                     child: const Buttons(button_text: "Log in",),
                    ),
                    Padding(
                      padding: const EdgeInsets.all(8.0),
                      child: Column(
                        children: [
-                         Text("Don't have acount?"),
+                         const Text("Don't have acount?"),
                          InkWell(
                            onTap: (){
                              Navigator.push(context,
                                MaterialPageRoute(builder: (context) =>
-                                   Sign_up()),);
+                                   const Sign_up()),);
                            },
-                           child: Text("sign up",style: TextStyle(color: Colors.blueAccent),),
+                           child: const Text("sign up",style: TextStyle(color: Colors.blueAccent),),
                          ),
                        ],
                      ),

@@ -61,15 +61,16 @@ class _MyWidgetState extends State<FirestoreImageDisplay> {
                             children: [
                               ClipOval(
                                 child: Image(
-                                  image: NetworkImage(imageUrl),
+                                  image: NetworkImage(imageUrl1),
                                   height: 250,
+                                  fit:BoxFit.fill,
                                 ),
                               ),
 
                               const SizedBox(
                                 height: 10,
                               ),
-                              const Text('tamer mohamed ',style:TextStyle(
+                              const Text('Janes ',style:TextStyle(
                                   color: Colors.white,
                                   fontSize: 20
                               ) ,),
@@ -113,16 +114,16 @@ class _MyWidgetState extends State<FirestoreImageDisplay> {
                           ),
                           child: Column(
                             children: [
-                              ClipOval(
+                              ClipRRect(
                                 child: Image(
-                                  image: NetworkImage(imageUrl),
+                                  image: NetworkImage(imageUrl2),
                                   height: 250,
                                 ),
                               ),
                               const SizedBox(
                                 height: 10,
                               ),
-                              const Text('tamer mohamed ',style:TextStyle(
+                              const Text('Skirts',style:TextStyle(
                                   color: Colors.white,
                                   fontSize: 20
                               ) ,),
@@ -184,7 +185,7 @@ class _MyWidgetState extends State<FirestoreImageDisplay> {
                               const SizedBox(
                                 height: 10,
                               ),
-                              const Text('tamer mohamed ',style:TextStyle(
+                              const Text('Jacket ',style:TextStyle(
                                   color: Colors.white,
                                   fontSize: 20
                               ) ,),
@@ -228,131 +229,14 @@ class _MyWidgetState extends State<FirestoreImageDisplay> {
                           ),
                           child: Column(
                             children: [
-                              ClipOval(
-                                child: Image(
-                                  image: NetworkImage(imageUrl),
-                                  height: 250,
-                                ),
+                              Image(
+                                image: NetworkImage(imageUrl2),
+                                height: 250,
                               ),
                               const SizedBox(
                                 height: 10,
                               ),
-                              const Text('tamer mohamed ',style:TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20
-                              ) ,),
-                              RatingBar(
-                                  itemSize:25 ,
-                                  initialRating: 0,
-                                  direction: Axis.horizontal,
-                                  allowHalfRating: true,
-                                  itemCount: 5,
-                                  ratingWidget: RatingWidget(
-
-                                      full: const Icon(Icons.star, color: Colors.orange),
-                                      half: const Icon(
-                                        Icons.star_half,
-                                        color: Colors.orange,
-                                      ),
-                                      empty: const Icon(
-                                        Icons.star_outline,
-                                        color: Colors.orange,
-                                      )),
-                                  onRatingUpdate: (value) {
-                                    setState(() {
-                                    });
-                                  }),
-
-                            ],
-                          ),
-
-                        ),
-                      ),
-                    ),
-
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child:
-                Row(
-                  children: [
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          width: 200,
-                          height: 320,
-                          decoration:  BoxDecoration(
-                              color: Colors.black,
-                              borderRadius: BorderRadius.circular(25)
-                          ),
-                          child: Column(
-                            children: [
-                              ClipOval(
-                                child: Image(
-                                  image: NetworkImage(imageUrl),
-                                  height: 250,
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              const Text('tamer mohamed ',style:TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20
-                              ) ,),
-                              RatingBar(
-                                  itemSize:25 ,
-                                  initialRating: 0,
-                                  direction: Axis.horizontal,
-                                  allowHalfRating: true,
-                                  itemCount: 5,
-                                  ratingWidget: RatingWidget(
-
-                                      full: const Icon(Icons.star, color: Colors.orange),
-                                      half: const Icon(
-                                        Icons.star_half,
-                                        color: Colors.orange,
-                                      ),
-                                      empty: const Icon(
-                                        Icons.star_outline,
-                                        color: Colors.orange,
-                                      )),
-                                  onRatingUpdate: (value) {
-                                    setState(() {
-                                    });
-                                  }),
-
-                            ],
-                          ),
-
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          width: 200,
-                          height: 320,
-                          decoration:  BoxDecoration(
-                              color: Colors.black,
-                              borderRadius: BorderRadius.circular(25)
-                          ),
-                          child: Column(
-                            children: [
-                              ClipOval(
-                                child: Image(
-                                  image: NetworkImage(imageUrl),
-                                  height: 250,
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              const Text('tamer mohamed ',style:TextStyle(
+                              const Text('Skirts',style:TextStyle(
                                   color: Colors.white,
                                   fontSize: 20
                               ) ,),
@@ -626,20 +510,20 @@ class _MyWidgetState extends State<FirestoreImageDisplay> {
   }
   Future<void> getImageUrl() async {
     // Get the feference to the image file in Firebase Storage
-    final ref = storage.ref().child('/file/5.jpg');
-    final ref1 = storage.ref().child('/file/1.jpg');
-    final ref2 = storage.ref().child('/file/2.jpg');
-    final ref3 = storage.ref().child('/file/3.jpg');
+    final ref = storage.ref().child('/t.jpg');
+    final ref1 = storage.ref().child('/tt.jpg');
+    final ref2 = storage.ref().child('/ttt.jpg');
+    // final ref3 = storage.ref().child('/t.jpg');
     // Get teh inageUrl to download URL
     final url = await ref.getDownloadURL();
     final url1 = await ref1.getDownloadURL();
     final url2 = await ref2.getDownloadURL();
-    final url3 = await ref3.getDownloadURL();
+    // final url3 = await ref3.getDownloadURL();
     setState(() {
       imageUrl = url;
       imageUrl1 = url1;
       imageUrl2 = url2;
-      imageUrl3 = url3;
+      // imageUrl3 = url3;
     });
   }
 }
