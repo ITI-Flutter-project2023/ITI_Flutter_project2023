@@ -18,7 +18,10 @@ class _LogInState extends State<LogIn> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      body: Container(decoration: BoxDecoration(
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+
+        decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage('assets/background4.jpg'),
           fit: BoxFit.fill,),
@@ -29,20 +32,21 @@ class _LogInState extends State<LogIn> {
               child: SingleChildScrollView(
                 child:
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                  children: [
                    Padding(
-                     padding: const EdgeInsets.symmetric(vertical: 50.0),
-                     child:
-                     Text("Log in page ",style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold),),
+                     padding: const EdgeInsets.fromLTRB(40, 8.0, 40, 8.0),
+                     child: Text("Log in page ",style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold),),
                    ),
 
                    Padding(
-                     padding: const EdgeInsets.symmetric(),
+                     padding: const EdgeInsets.fromLTRB(40, 8.0, 40, 8.0),
                      child: Text_field(text: "  Email", valid: '@gmail.com', message: 'In valid email!',),
                    ),
 
                    Padding(
-                     padding: const EdgeInsets.symmetric(vertical: 20.0),
+                     padding: const EdgeInsets.fromLTRB(40, 8.0, 40, 8.0),
                      child: TextFieldpass(text:"  Password", ),
                    ),
 

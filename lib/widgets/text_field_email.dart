@@ -15,24 +15,21 @@ class _Text_fieldState extends State<Text_field> {
    @override
   Widget build(BuildContext context) {
     return  Center(
-      child: Padding(padding: const EdgeInsets.symmetric(horizontal: 300.0),
-        child:
-        TextFormField(
-            decoration:
-            InputDecoration(labelText:widget.text,
-            labelStyle:TextStyle(fontSize:30,fontWeight: FontWeight.bold),
-            border: OutlineInputBorder(  borderRadius: BorderRadius.circular(20.0)),
-            ),
-            validator: (value){
-              if (value!.contains(widget.valid)){
-                return null;
-              }
-              else{
-                return widget.message;
-              }
+      child: TextFormField(
+          decoration:
+          InputDecoration(labelText:widget.text,
+          labelStyle:TextStyle(fontSize:30,fontWeight: FontWeight.bold),
+          border: OutlineInputBorder(  borderRadius: BorderRadius.circular(20.0)),
+          ),
+          validator: (value){
+            if (value!.contains(widget.valid)){
+              return null;
             }
-            ),
-      ),
+            else{
+              return widget.message;
+            }
+          }
+          ),
     );
   }
 }
