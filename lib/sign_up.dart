@@ -35,7 +35,7 @@ class _Sign_upState extends State<Sign_up> {
   Widget build(context) {
     return Scaffold(
 >>>>>>> 11df1842f6132ace5b22cd7465343ab6dfb9eee0
-      body: Container(
+      body: Container(BuildContext
         //height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
 
