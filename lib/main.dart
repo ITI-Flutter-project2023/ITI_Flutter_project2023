@@ -1,7 +1,8 @@
+// ignore_for_file: depend_on_referenced_packages
 import 'package:flutter/material.dart';
-// ignore: depend_on_referenced_packages
 import 'package:firebase_core/firebase_core.dart';
 import 'package:iti_flutter_project/firebase_options.dart';
+import 'package:iti_flutter_project/homelayout.dart';
 import 'package:iti_flutter_project/log_in.dart';
 
 Future<void> main() async {
@@ -9,17 +10,18 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
+  runApp( MyApp());
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
       debugShowCheckedModeBanner: false,
-       home:LogIn(),
+      home: homelayout(),
+
     );
   }
 }
-
